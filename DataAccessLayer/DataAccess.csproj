@@ -58,6 +58,7 @@
     <Compile Include="Abstract\ICommentDal.cs" />
     <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\IEntityRepository.cs" />
+    <Compile Include="Abstract\ISubscribeMailDal.cs" />
     <Compile Include="Concrete\EntityFramework\BlogDBContext.cs" />
     <Compile Include="Concrete\EntityFramework\EfAboutDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfAdminDal.cs" />
@@ -66,9 +67,18 @@
     <Compile Include="Concrete\EntityFramework\EfCommentDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfContactDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfEntityRepositoryBase.cs" />
+    <Compile Include="Concrete\EntityFramework\EfSubscribeMailDal.cs" />
     <Compile Include="Migrations\202107041619255_mig_addblogpreread.cs" />
     <Compile Include="Migrations\202107041619255_mig_addblogpreread.designer.cs">
       <DependentUpon>202107041619255_mig_addblogpreread.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107051420036_mig_add_subscribemailtable.cs" />
+    <Compile Include="Migrations\202107051420036_mig_add_subscribemailtable.designer.cs">
+      <DependentUpon>202107051420036_mig_add_subscribemailtable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107051512245_mig_updateSubscribeMail.cs" />
+    <Compile Include="Migrations\202107051512245_mig_updateSubscribeMail.designer.cs">
+      <DependentUpon>202107051512245_mig_updateSubscribeMail.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -86,6 +96,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202107041619255_mig_addblogpreread.resx">
       <DependentUpon>202107041619255_mig_addblogpreread.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107051420036_mig_add_subscribemailtable.resx">
+      <DependentUpon>202107051420036_mig_add_subscribemailtable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107051512245_mig_updateSubscribeMail.resx">
+      <DependentUpon>202107051512245_mig_updateSubscribeMail.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

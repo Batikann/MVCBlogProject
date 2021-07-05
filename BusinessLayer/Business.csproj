@@ -45,13 +45,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IBlogService.cs" />
+    <Compile Include="Abstract\ISubscribeMailService.cs" />
     <Compile Include="Concrete\BlogManager.cs" />
+    <Compile Include="Concrete\SubscribeMailManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValidationRules\FluentValidation\AboutValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\AdminValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\BlogValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\CategoryValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\ContactValidator.cs" />
+    <Compile Include="ValidationRules\FluentValidation\SubscribeMailValidation.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
