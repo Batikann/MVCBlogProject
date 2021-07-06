@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.ValidationRules.FluentValidation
 {
-    public class SubscribeMailValidation:AbstractValidator<SubscribeMail>
+    public class SubscribeMailValidator:AbstractValidator<SubscribeMail>
     {
-        public SubscribeMailValidation()
+        public SubscribeMailValidator()
         {
             RuleFor(s => s.Mail).NotEmpty().WithMessage("Mail Alanı Boş Geçilemez");
         }

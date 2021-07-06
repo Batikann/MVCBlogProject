@@ -14,9 +14,6 @@ namespace EntityLayer.Concrete
         public int MailID { get; set; }
 
         [EmailAddress]
-        [RegularExpression(@"^([A-Za-z0-9][^'!&\\#*$%^?<>()+=:;`~\[\]{}|/,₹€@ ][a-zA-z0- 
-    9-._][^!&\\#*$%^?<>()+=:;`~\[\]{}|/,₹€@ ]*\@[a-zA-Z0-9][^!&@\\#*$%^?<> 
-        ()+=':;~`.\[\]{}|/,₹€ ]*\.[a-zA-Z]{2,6})$")]
         public string Mail { get; set; }
     }
 }

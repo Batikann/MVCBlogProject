@@ -63,6 +63,11 @@ namespace DataAccessLayer.Concrete.EntityFramework
             return _object.ToList();
         }
 
+        public List<TEntity> List(Expression<Func<TEntity, bool>> filter)
+        {
+            return _object.Where(filter).ToList();
+        }
+
         public void Update(TEntity entity)
         {
             using (TContext context = new TContext())

@@ -1,4 +1,8 @@
-﻿using EntityLayer.Concrete;
+﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules.FluentValidation;
+using DataAccessLayer.Concrete.EntityFramework;
+using EntityLayer.Concrete;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +13,8 @@ namespace WebUI.Controllers
 {
     public class MailSubscribeController : Controller
     {
-        
+        SubscribeMailManager mailManager = new SubscribeMailManager(new EfSubscribeMailDal());
+        SubscribeMailValidator mailValidator = new SubscribeMailValidator();
         public PartialViewResult AddMail()
         {
             return PartialView();
@@ -18,7 +23,19 @@ namespace WebUI.Controllers
         [HttpPost]
         public PartialViewResult AddMail(SubscribeMail subscribeMail)
         {
-            return PartialView();
+            ValidationResult validation = mailValidator.Validate(subscribeMail);
+            if (validation.IsValid)
+            {
+                mailManager.Add(subscribeMail);
+            }
+            else
+            {
+                foreach (var item in validation.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            return PartialView(subscribeMail);
         }
     }
 }

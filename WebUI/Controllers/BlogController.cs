@@ -109,17 +109,20 @@ namespace WebUI.Controllers
         }
         public ActionResult BlogDetails()
         {
+
             return View();
         }
 
-        public PartialViewResult BlogCover()
+        public PartialViewResult BlogCover(int id)
         {
-            return PartialView();
+            var blogDetailsList = blogManager.BlogByID(id);
+            return PartialView(blogDetailsList);
         }
 
-        public PartialViewResult BlogReadAll()
+        public PartialViewResult BlogReadAll(int id)
         {
-            return PartialView();
+            var blogDetailsList = blogManager.BlogByID(id);
+            return PartialView(blogDetailsList);
         }
 
         public ActionResult BlogByCategory()

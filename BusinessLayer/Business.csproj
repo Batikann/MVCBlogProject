@@ -54,7 +54,7 @@
     <Compile Include="ValidationRules\FluentValidation\BlogValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\CategoryValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\ContactValidator.cs" />
-    <Compile Include="ValidationRules\FluentValidation\SubscribeMailValidation.cs" />
+    <Compile Include="ValidationRules\FluentValidation\SubscribeMailValidator.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -23,6 +23,11 @@ namespace BusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
+        public List<Blog> BlogByID(int id)
+        {
+            return _blogDal.List(x => x.BlogID == id);
+        }
+
         public void Delete(Blog entity)
         {
             throw new NotImplementedException();
