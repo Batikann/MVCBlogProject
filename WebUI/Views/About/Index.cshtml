@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<EntityLayer.Concrete.About>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/Layout.cshtml";
@@ -10,8 +10,8 @@
         <div class="row same-height justify-content-center">
             <div class="col-md-12 col-lg-10">
                 <div class="post-entry text-center">
-                    <h1 class="">About Us</h1>
-                    <p class="lead mb-4 text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, adipisci?</p>
+                    <h1 class="">Hakkımızda</h1>
+                    <p class="lead mb-4 text-white">Ekibimizi Daha Yakından Tanımak İster misiniz?</p>
                 </div>
             </div>
         </div>
@@ -55,4 +55,3 @@
         </div>
     </div>
 </div>
-@Html.Action("MailSubscribe","Blog")

@@ -13,6 +13,7 @@ namespace EntityLayer.Concrete
         [Key]
         public int CategoryID { get; set; }
         public string CategoryName { get; set; }
+        public string CategoryExplanation { get; set; }
         public bool CategoryStatus { get; set; }
         public ICollection<Blog> Blogs { get; set; }
     }

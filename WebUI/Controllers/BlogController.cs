@@ -125,7 +125,16 @@ namespace WebUI.Controllers
             return PartialView(blogDetailsList);
         }
 
-        public ActionResult BlogByCategory()
+        public ActionResult BlogByCategory(int id)
+        {
+            var blogListById = blogManager.GetBlogByCategory(id);
+            var categoryName = blogManager.GetBlogByCategory(id).Select(y => y.Category.CategoryName).FirstOrDefault();
+            var categoryExplanation = blogManager.GetBlogByCategory(id).Select(y => y.Category.CategoryExplanation).FirstOrDefault();
+            ViewBag.CategoryName = categoryName;
+            ViewBag.CategoryExplanation = categoryExplanation;
+            return View(blogListById);
+        }
+        public ActionResult Test()
         {
             return View();
         }

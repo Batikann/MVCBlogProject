@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete.EntityFramework;
+using EntityLayer.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +11,21 @@ namespace WebUI.Controllers
 {
     public class ContactController : Controller
     {
-        // GET: Contact
+        ContactManager contactManager = new ContactManager(new EfContactDal());
         public ActionResult Index()
         {
+            return View();
+        }
+
+        public ActionResult SendMessage()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult SendMessage(Contact contact)
+        {
+            contactManager.AddContact(contact);
             return View();
         }
     }

@@ -1,4 +1,9 @@
-﻿using System;
+﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules.FluentValidation;
+using DataAccessLayer.Concrete.EntityFramework;
+using EntityLayer.Concrete;
+using FluentValidation.Results;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,14 +13,26 @@ namespace WebUI.Controllers
 {
     public class CommentController : Controller
     {
-        // GET: Comment
-        public PartialViewResult CommentList()
+        CommentManager commentManager = new CommentManager(new EfCommentDal());
+        CommentValidator commentValidator = new CommentValidator();
+
+        public PartialViewResult CommentList(int id)
         {
+            var commentList = commentManager.GetCommentByBlogId(id);
+            return PartialView(commentList);
+        }
+        public PartialViewResult LeaveComment(int id)
+        {
+            ViewBag.id = id;
             return PartialView();
         }
-        public PartialViewResult LeaveComment()
+
+        [HttpPost]
+        public PartialViewResult LeaveComment(Comment comment)
         {
-            return PartialView();
+            comment.CommentDate = DateTime.Now;
+            commentManager.CommentAdd(comment);
+            return PartialView(comment);
         }
     }
 }

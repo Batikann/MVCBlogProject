@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,14 +10,17 @@ namespace WebUI.Controllers
 {
     public class AuthorController : Controller
     {
-        // GET: Author
-        public PartialViewResult AuthorAbout()
+        BlogManager blogManager = new BlogManager(new EfBlogDal());
+        public PartialViewResult AuthorAbout(int id)
         {
-            return PartialView();
+            var authorDetails = blogManager.BlogByID(id);
+            return PartialView(authorDetails);
         }
-        public PartialViewResult AuthorPopularPosts()
+        public PartialViewResult AuthorPopularPosts(int id)
         {
-            return PartialView();
+            var blogAuthorID = blogManager.GetList().Where(x => x.BlogID == id).Select(y => y.AdminID).FirstOrDefault();
+            var authorBlogs = blogManager.GetBlogByAuthor(blogAuthorID);
+            return PartialView(authorBlogs);
         }
     }
 }

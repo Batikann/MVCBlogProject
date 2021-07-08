@@ -84,6 +84,14 @@
     <Compile Include="Migrations\202107051931125_mig2.designer.cs">
       <DependentUpon>202107051931125_mig2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107061818236_mig_addCommentTableDateColumn.cs" />
+    <Compile Include="Migrations\202107061818236_mig_addCommentTableDateColumn.designer.cs">
+      <DependentUpon>202107061818236_mig_addCommentTableDateColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107071344559_mig_categoryExplanationColumnAdd.cs" />
+    <Compile Include="Migrations\202107071344559_mig_categoryExplanationColumnAdd.designer.cs">
+      <DependentUpon>202107071344559_mig_categoryExplanationColumnAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -109,6 +117,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107051931125_mig2.resx">
       <DependentUpon>202107051931125_mig2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107061818236_mig_addCommentTableDateColumn.resx">
+      <DependentUpon>202107061818236_mig_addCommentTableDateColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107071344559_mig_categoryExplanationColumnAdd.resx">
+      <DependentUpon>202107071344559_mig_categoryExplanationColumnAdd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

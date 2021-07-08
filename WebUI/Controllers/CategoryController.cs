@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +10,11 @@ namespace WebUI.Controllers
 {
     public class CategoryController : Controller
     {
-        // GET: Category
+        CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
         public PartialViewResult BlogDetailsCategoryList()
         {
-            return PartialView();
+            var categoryValues = categoryManager.GetAllCategory();
+            return PartialView(categoryValues);
         }
     }
 }

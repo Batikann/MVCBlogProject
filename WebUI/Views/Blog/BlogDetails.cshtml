@@ -13,7 +13,6 @@
             <div class="col-md-12 col-lg-8 main-content">
                 @Html.Action("BlogReadAll", "Blog")
                 @Html.Action("CommentList", "Comment")
-                @Html.Action("LeaveComment", "Comment")
             </div>
             <div class="col-md-12 col-lg-4 sidebar">
                 @Html.Action("AuthorAbout", "Author")
@@ -23,5 +22,5 @@
         </div>
     </div>
 </section>
-@*@Html.Action("OtherFeaturedPost", "Blog")*@
+@Html.Action("OtherFeaturedPost", "Blog")
 @Html.Action("AddMail", "MailSubscribe")

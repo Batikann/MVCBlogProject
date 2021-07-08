@@ -58,6 +58,7 @@ namespace DataAccessLayer.Concrete.EntityFramework
             }
         }
 
+
         public List<TEntity> List()
         {
             return _object.ToList();
