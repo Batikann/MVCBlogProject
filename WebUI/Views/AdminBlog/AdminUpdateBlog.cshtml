@@ -1,0 +1,79 @@
+﻿@model EntityLayer.Concrete.Blog
+@{
+    ViewBag.Title = "AdminUpdateBlog";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<script type="text/javascript">
+    CKEDİTOR.replace('editor')
+</script>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AdminLTE 3 | Project Add</title>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+</head>
+<body class="hold-transition sidebar-mini">
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Yeni Blog Ekle</h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form method="post">
+                            <div class="form-group">
+                                @Html.HiddenFor(x=>x.BlogID)
+                                <label for="inputName">Blog Başlığı</label>
+                                @Html.TextBoxFor(x => x.BlogTitle, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.BlogTitle)
+                            </div>
+                            <div class="form-group">
+                                <label for="inputDescription">Blog Resmi</label>
+                                @Html.TextBoxFor(x => x.BlogImage, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                <label for="inputDescription">Kategori</label>
+                                @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.values, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                <label for="inputDescription">Yazar</label>
+                                @Html.DropDownListFor(x => x.AdminID, (List<SelectListItem>)ViewBag.values2, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                <label for="inputDescription">Ön Okuma</label>
+                                @Html.TextAreaFor(x => x.BlogPreRead, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                <label for="inputClientCompany">Blog İçerik</label>
+                                @Html.TextAreaFor(x => x.BlogContent, new { @class = "ckeditor" });
+                            </div>
+                            <button class="btn btn-success" type="submit">Blog Ekle</button>
+                        </form>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+<script src="~/Content/ckeditor/ckeditor.js"></script>
+@*<link href="~/Content/ckeditor/contents.css" rel="stylesheet" />*@
+
