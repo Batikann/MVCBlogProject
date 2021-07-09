@@ -136,6 +136,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminPanel\AdminAuthorController.cs" />
     <Compile Include="Controllers\AdminPanel\AdminBlogController.cs" />
     <Compile Include="Controllers\AdminPanel\AdminCommentController.cs" />
     <Compile Include="Controllers\BlogPanel\AboutController.cs" />
@@ -3343,6 +3344,7 @@
     <Content Include="Views\AdminBlog\AdminAddBlog.cshtml" />
     <Content Include="Views\AdminBlog\AdminUpdateBlog.cshtml" />
     <Content Include="Views\AdminComment\GetCommentByBlog.cshtml" />
+    <Content Include="Views\AdminAuthor\AuthorList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

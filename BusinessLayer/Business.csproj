@@ -44,11 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IAuthorService.cs" />
     <Compile Include="Abstract\IBlogService.cs" />
     <Compile Include="Abstract\ICategoryService.cs" />
     <Compile Include="Abstract\ICommentService.cs" />
     <Compile Include="Abstract\IContactService.cs" />
     <Compile Include="Abstract\ISubscribeMailService.cs" />
+    <Compile Include="Concrete\AuthorManager.cs" />
     <Compile Include="Concrete\BlogManager.cs" />
     <Compile Include="Concrete\CategoryManager.cs" />
     <Compile Include="Concrete\CommentManager.cs" />

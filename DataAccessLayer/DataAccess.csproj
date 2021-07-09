@@ -92,6 +92,10 @@
     <Compile Include="Migrations\202107071344559_mig_categoryExplanationColumnAdd.designer.cs">
       <DependentUpon>202107071344559_mig_categoryExplanationColumnAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107091926167_mig_admintableupdatecolumn.cs" />
+    <Compile Include="Migrations\202107091926167_mig_admintableupdatecolumn.designer.cs">
+      <DependentUpon>202107091926167_mig_admintableupdatecolumn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -123,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107071344559_mig_categoryExplanationColumnAdd.resx">
       <DependentUpon>202107071344559_mig_categoryExplanationColumnAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107091926167_mig_admintableupdatecolumn.resx">
+      <DependentUpon>202107091926167_mig_admintableupdatecolumn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

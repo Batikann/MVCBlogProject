@@ -14,8 +14,10 @@ namespace EntityLayer.Concrete
         public int AdminID { get; set; }
         public string UserName { get; set; }
         public string AdminMail { get; set; }
+        public string AdminTitle { get; set; }
         public string AdminImage { get; set; }
         public string AdminAbout { get; set; }
+        public string AdminPhoneNumber { get; set; }
         public string Password { get; set; }
 
         public ICollection<Blog> Blogs { get; set; }
