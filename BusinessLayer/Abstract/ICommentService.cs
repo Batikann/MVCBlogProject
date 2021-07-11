@@ -11,6 +11,11 @@ namespace BusinessLayer.Abstract
     {
         List<Comment> GetAllComment();
         List<Comment> GetCommentByBlogId(int id);
+        Comment GetCommentById(int id);
+        List<Comment> GetCommentStatusTrue();
+        List<Comment> GetCommentStatusFalse();
+        void CommentChangeStatusFalse(Comment comment);
+        void CommentChangeStatusTrue(Comment comment);
         void CommentAdd(Comment comment);
     }
 }

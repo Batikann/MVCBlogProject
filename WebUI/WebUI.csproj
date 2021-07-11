@@ -138,6 +138,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminPanel\AdminAuthorController.cs" />
     <Compile Include="Controllers\AdminPanel\AdminBlogController.cs" />
+    <Compile Include="Controllers\AdminPanel\AdminCategoryController.cs" />
     <Compile Include="Controllers\AdminPanel\AdminCommentController.cs" />
     <Compile Include="Controllers\BlogPanel\AboutController.cs" />
     <Compile Include="Controllers\BlogPanel\AuthorController.cs" />
@@ -704,6 +705,7 @@
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Gallery\vector-type-flat-2.png" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
@@ -3345,6 +3347,9 @@
     <Content Include="Views\AdminBlog\AdminUpdateBlog.cshtml" />
     <Content Include="Views\AdminComment\GetCommentByBlog.cshtml" />
     <Content Include="Views\AdminAuthor\AuthorList.cshtml" />
+    <Content Include="Views\AdminComment\AdminCommentList.cshtml" />
+    <Content Include="Views\AdminComment\AdminFalseCommentList.cshtml" />
+    <Content Include="Views\AdminCategory\AdminCategoryIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

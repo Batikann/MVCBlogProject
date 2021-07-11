@@ -58,7 +58,7 @@ to get the desired effect
                         <!-- Add icons to the links using the .nav-icon class
     with font-awesome or any other icon font library -->
                         <li class="nav-item">
-                            <a href="pages/widgets.html" class="nav-link">
+                            <a href="/AdminBlog/AdminBlogList/" class="nav-link">
                                 <i class="nav-icon fas fa-pen"></i>
                                 <p>
                                     Bloglar
@@ -67,7 +67,7 @@ to get the desired effect
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/widgets.html" class="nav-link">
+                            <a href="/AdminAuthor/AuthorList/" class="nav-link">
                                 <i class="nav-icon fas fa-address-book"></i>
                                 <p>
                                     Yazarlar
@@ -75,14 +75,28 @@ to get the desired effect
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="pages/widgets.html" class="nav-link">
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-comments"></i>
                                 <p>
                                     Yorumlar
-                                    @*<span class="right badge badge-danger">New</span>*@
+                                    <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/AdminComment/AdminCommentList/" class="nav-link">
+                                        <i class="fas fa-comment nav-icon"></i>
+                                        <p>Yayınlanan Yorumlar</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/AdminComment/AdminFalseCommentList/" class="nav-link">
+                                        <i class="fas fa-comment-slash nav-icon"></i>
+                                        <p>Kaldırılan Yorumlar</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a href="pages/widgets.html" class="nav-link">
@@ -159,7 +173,7 @@ to get the desired effect
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/widgets.html" class="nav-link">
+                            <a href="/Blog/Index/" class="nav-link">
                                 <i class="nav-icon fas fa-blog"></i>
                                 <p>
                                     Siteye Dön

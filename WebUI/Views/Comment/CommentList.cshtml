@@ -12,7 +12,7 @@
                 </div>
                 <div class="comment-body">
                     <h3>@item.UserName</h3>
-                    <div class="meta">@(((DateTime)item.CommentDate).ToString("dd-MMM-yyyy"))</div>
+                    <div class="meta">@(((DateTime)item.CommentDate).ToString("dd-MMM-yyyy"))-@(((DateTime)item.CommentDate).ToShortTimeString())</div>
                     <p>@item.CommentText</p>
                     @*<p><a href="#" class="reply rounded">Reply</a></p>*@
                 </div>

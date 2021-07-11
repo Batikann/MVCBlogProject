@@ -16,5 +16,31 @@ namespace WebUI.Controllers.AdminPanel
             var commentList = commentManager.GetCommentByBlogId(id);
             return View(commentList);
         }
+
+        public ActionResult AdminCommentList()
+        {
+            var commentList = commentManager.GetCommentStatusTrue();
+            return View(commentList);
+        }
+
+        public ActionResult AdminFalseCommentList()
+        {
+            var commentList = commentManager.GetCommentStatusFalse();
+            return View(commentList);
+        }
+
+        public ActionResult DeleteComment(int id)
+        {
+            var getComment = commentManager.GetCommentById(id);
+            commentManager.CommentChangeStatusFalse(getComment);
+            return RedirectToAction("AdminCommentList");
+        }
+
+        public ActionResult ConfirmComment(int id)
+        {
+            var getComment = commentManager.GetCommentById(id);
+            commentManager.CommentChangeStatusTrue(getComment);
+            return RedirectToAction("AdminCommentList");
+        }
     }
 }
