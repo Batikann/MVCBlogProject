@@ -100,6 +100,10 @@
     <Compile Include="Migrations\202107111416205_mig_commenttable_statuscolumn.designer.cs">
       <DependentUpon>202107111416205_mig_commenttable_statuscolumn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107131234054_mig_contacttable_addcolumn.cs" />
+    <Compile Include="Migrations\202107131234054_mig_contacttable_addcolumn.designer.cs">
+      <DependentUpon>202107131234054_mig_contacttable_addcolumn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -137,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107111416205_mig_commenttable_statuscolumn.resx">
       <DependentUpon>202107111416205_mig_commenttable_statuscolumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107131234054_mig_contacttable_addcolumn.resx">
+      <DependentUpon>202107131234054_mig_contacttable_addcolumn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

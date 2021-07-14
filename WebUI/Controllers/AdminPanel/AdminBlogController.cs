@@ -1,10 +1,12 @@
 ﻿using BusinessLayer.Concrete;
+using BusinessLayer.Utilities.Helper;
 using BusinessLayer.ValidationRules.FluentValidation;
 using DataAccessLayer.Concrete.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -46,10 +48,19 @@ namespace WebUI.Controllers.AdminPanel
         [ValidateInput(false)]
         public ActionResult AdminAddBlog(Blog blog)
         {
-
-            blog.BlogDate = DateTime.Now;
-            blogManager.Add(blog);
-            return RedirectToAction("AdminBlogList");
+            if (Request.Files.Count>0)
+            {
+                string fileName = Path.GetFileName(Request.Files[0].FileName);
+               var newFileName= FileOperationsHelper.CreateNewFileName(fileName);
+                string expansion = Path.GetExtension(Request.Files[0].FileName);
+                string path = "/Images/Gallery/" + newFileName + expansion;
+                Request.Files[0].SaveAs(Server.MapPath(path));
+                blog.BlogImage= "/Images/Gallery/" + newFileName + expansion;
+                blog.BlogDate = DateTime.Now;
+                blogManager.Add(blog);
+                return RedirectToAction("AdminBlogList");
+            }
+            return View(blog);
         }
 
         public ActionResult AdminUpdateBlog(int id)

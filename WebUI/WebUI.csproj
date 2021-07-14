@@ -136,10 +136,12 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminPanel\AdminAboutController.cs" />
     <Compile Include="Controllers\AdminPanel\AdminAuthorController.cs" />
     <Compile Include="Controllers\AdminPanel\AdminBlogController.cs" />
     <Compile Include="Controllers\AdminPanel\AdminCategoryController.cs" />
     <Compile Include="Controllers\AdminPanel\AdminCommentController.cs" />
+    <Compile Include="Controllers\AdminPanel\AdminContactController.cs" />
     <Compile Include="Controllers\BlogPanel\AboutController.cs" />
     <Compile Include="Controllers\BlogPanel\AuthorController.cs" />
     <Compile Include="Controllers\BlogPanel\BlogController.cs" />
@@ -3350,9 +3352,14 @@
     <Content Include="Views\AdminComment\AdminCommentList.cshtml" />
     <Content Include="Views\AdminComment\AdminFalseCommentList.cshtml" />
     <Content Include="Views\AdminCategory\AdminCategoryIndex.cshtml" />
+    <Content Include="Views\AdminAbout\UpdateAbout.cshtml" />
+    <Content Include="Views\AdminContact\Inbox.cshtml" />
+    <Content Include="Views\AdminContact\InboxDetails.cshtml" />
+    <Content Include="Views\AdminContact\InboxPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\Gallery\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

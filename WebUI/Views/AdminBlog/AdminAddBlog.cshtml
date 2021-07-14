@@ -34,7 +34,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form method="post">
+                        <form method="post" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="inputName">Blog Başlığı</label>
                                 @Html.TextBoxFor(x => x.BlogTitle, new { @class = "form-control" })
@@ -42,7 +42,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="inputDescription">Blog Resmi</label>
-                                @Html.TextBoxFor(x => x.BlogImage, new { @class = "form-control" })
+                                <input type="file" name="BlogImage" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="inputDescription">Kategori</label>

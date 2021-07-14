@@ -25,6 +25,7 @@ namespace WebUI.Controllers
         [HttpPost]
         public ActionResult SendMessage(Contact contact)
         {
+            contact.ContactDate = DateTime.Now;
             contactManager.AddContact(contact);
             return View();
         }
