@@ -19,9 +19,9 @@ namespace BusinessLayer.ValidationRules.FluentValidation
             RuleFor(c => c.Password).NotEmpty().WithMessage("Şifre Alanı Boş Geçilemez");
             RuleFor(c => c.Password).MinimumLength(8).WithMessage("Şifre 8 Karakterden Kısa Olamaz");
             RuleFor(c => c.Password).MaximumLength(12).WithMessage("Şifre 12 Karakterden Uzun Olamaz");
-            RuleFor(c => c.AdminAbout).NotEmpty().WithMessage("Hakkında Kısmı Boş Geçilemez.");
-            RuleFor(c => c.AdminAbout).MinimumLength(10).WithMessage("Hakkında Kısmı 10 Karakterden Kısa Olamaz.");
-            RuleFor(c => c.AdminAbout).MaximumLength(30).WithMessage("Hakkında Kısmı 30 Karakterden Uzun Olamaz.");
+            //RuleFor(c => c.AdminAbout).NotEmpty().WithMessage("Hakkında Kısmı Boş Geçilemez.");
+            //RuleFor(c => c.AdminAbout).MinimumLength(10).WithMessage("Hakkında Kısmı 10 Karakterden Kısa Olamaz.");
+            //RuleFor(c => c.AdminAbout).MaximumLength(30).WithMessage("Hakkında Kısmı 30 Karakterden Uzun Olamaz.");
 
         }
     }

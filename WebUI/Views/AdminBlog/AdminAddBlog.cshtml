@@ -38,7 +38,6 @@
                             <div class="form-group">
                                 <label for="inputName">Blog Başlığı</label>
                                 @Html.TextBoxFor(x => x.BlogTitle, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(x => x.BlogTitle)
                             </div>
                             <div class="form-group">
                                 <label for="inputDescription">Blog Resmi</label>
@@ -58,7 +57,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="inputClientCompany">Blog İçerik</label>
-                                @Html.TextAreaFor(x => x.BlogContent, new { @class="ckeditor"})
+                                @Html.TextAreaFor(x => x.BlogContent, new { @class = "ckeditor" })
                             </div>
                             <button class="btn btn-success" type="submit">Blog Ekle</button>
                         </form>

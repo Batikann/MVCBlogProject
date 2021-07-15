@@ -35,11 +35,11 @@ namespace WebUI.Controllers.AdminPanel
             ViewBag.values = values;
 
             List<SelectListItem> values2 = (from x in context.Admins.ToList()
-                                           select new SelectListItem
-                                           {
-                                               Text = x.UserName,
-                                               Value = x.AdminID.ToString()
-                                           }).ToList();
+                                            select new SelectListItem
+                                            {
+                                                Text = x.UserName,
+                                                Value = x.AdminID.ToString()
+                                            }).ToList();
             ViewBag.values2 = values2;
             return View();
         }
@@ -48,19 +48,20 @@ namespace WebUI.Controllers.AdminPanel
         [ValidateInput(false)]
         public ActionResult AdminAddBlog(Blog blog)
         {
-            if (Request.Files.Count>0)
+            if (Request.Files.Count > 0)
             {
                 string fileName = Path.GetFileName(Request.Files[0].FileName);
-               var newFileName= FileOperationsHelper.CreateNewFileName(fileName);
+                var newFileName = FileOperationsHelper.CreateNewFileName(fileName);
                 string expansion = Path.GetExtension(Request.Files[0].FileName);
                 string path = "/Images/Gallery/" + newFileName + expansion;
                 Request.Files[0].SaveAs(Server.MapPath(path));
-                blog.BlogImage= "/Images/Gallery/" + newFileName + expansion;
+                blog.BlogImage = "/Images/Gallery/" + newFileName + expansion;
                 blog.BlogDate = DateTime.Now;
                 blogManager.Add(blog);
                 return RedirectToAction("AdminBlogList");
             }
             return View(blog);
+
         }
 
         public ActionResult AdminUpdateBlog(int id)
@@ -86,11 +87,22 @@ namespace WebUI.Controllers.AdminPanel
 
         [HttpPost]
         [ValidateInput(false)]
-        public  ActionResult AdminUpdateBlog(Blog blog)
+        public ActionResult AdminUpdateBlog(Blog blog)
         {
-            blog.BlogDate = DateTime.Now;
-            blogManager.Update(blog);
-            return RedirectToAction("AdminBlogList");
+            if (Request.Files.Count > 0)
+            {
+                string fileName = Path.GetFileName(Request.Files[0].FileName);
+                var newFileName = FileOperationsHelper.CreateNewFileName(fileName);
+                string expansion = Path.GetExtension(Request.Files[0].FileName);
+                string path = "/Images/Gallery/" + newFileName + expansion;
+                Request.Files[0].SaveAs(Server.MapPath(path));
+                blog.BlogImage = "/Images/Gallery/" + newFileName + expansion;
+                blog.BlogDate = DateTime.Now;
+                blogManager.Update(blog);
+                return RedirectToAction("AdminBlogList");
+            }
+
+            return View(blog);
         }
 
     }

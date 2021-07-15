@@ -3,7 +3,13 @@
     ViewBag.Title = "AdminCategoryIndex";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
-
+@{ 
+    string status = "";
+    string color = "";
+    string status2 = "";
+    string icon = "";
+    string color2 = "";
+}
 <!DOCTYPE html>
 
 <html>
@@ -92,6 +98,22 @@
 
                     @foreach (var item in Model)
                     {
+                        if (item.CategoryStatus==false)
+                        {
+                            status = "Pasif";
+                            color = "badge badge-danger";
+                            status2 = "Aktif Yap";
+                            color2 = "btn btn-danger btn-sm";
+                            icon = "fas fa-eye-slash";
+                        }
+                        if (item.CategoryStatus==true)
+                        {
+                            status = "Aktif";
+                            color = "badge badge-success";
+                            status2 = "Pasif Yap";
+                            color2 = "btn btn-success btn-sm";
+                            icon = "fas fa-eye";
+                        }
                         <tbody>
 
                             <tr>
@@ -133,27 +155,11 @@
 
                                 </td>
 
-                                @*<td class="project_progress">
-
-                                        <div class="progress progress-sm">
-
-                                            <div class="progress-bar bg-green" role="progressbar" aria-volumenow="57" aria-volumemin="0" aria-volumemax="100" style="width: 57%">
-
-                                            </div>
-
-                                        </div>
-
-                                        <small>
-
-                                            57% Complete
-
-                                        </small>
-
-                                    </td>*@
+                               
 
                                 <td class="project-state">
 
-                                    <span class="badge badge-success">Success</span>
+                                    <span class="@color">@status</span>
 
                                 </td>
 
@@ -169,7 +175,7 @@
 
                                     </a>
 
-                                    <a class="btn btn-info btn-sm" href="#">
+                                    <a class="btn btn-info btn-sm" href="/AdminCategory/UpdateCategory/@item.CategoryID/">
 
                                         <i class="fas fa-pencil-alt">
 
@@ -179,13 +185,13 @@
 
                                     </a>
 
-                                    <a class="btn btn-danger btn-sm" href="#">
+                                    <a class="@color2" href="/AdminCategory/ChangeStatusCategory/@item.CategoryID">
 
-                                        <i class="fas fa-trash">
+                                        <i class="@icon">
 
                                         </i>
 
-                                        Sil
+                                        @status2
 
                                     </a>
 
@@ -197,6 +203,9 @@
                     }
 
                 </table>
+                <br />
+                <a class="btn btn-outline-success" href="/AdminCategory/AdminAddCategory/">Yeni Kategori Ekle</a>
+                <br />
 
             </div>
 

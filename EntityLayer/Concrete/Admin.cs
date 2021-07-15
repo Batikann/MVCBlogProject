@@ -19,6 +19,9 @@ namespace EntityLayer.Concrete
         public string AdminAbout { get; set; }
         public string AdminPhoneNumber { get; set; }
         public string Password { get; set; }
+        public DateTime DateOfBirth { get; set; }
+        public bool IsEmailVerified { get; set; }
+        public Guid ActivationCode { get; set; }
 
         public ICollection<Blog> Blogs { get; set; }
     }

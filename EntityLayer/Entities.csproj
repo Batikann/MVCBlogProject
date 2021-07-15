@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IDto.cs" />
     <Compile Include="Abstract\IEntity.cs" />
     <Compile Include="Concrete\About.cs" />
     <Compile Include="Concrete\Admin.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="Concrete\Comment.cs" />
     <Compile Include="Concrete\Contact.cs" />
     <Compile Include="Concrete\SubscribeMail.cs" />
+    <Compile Include="DTOs\AdminRegister.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

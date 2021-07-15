@@ -14,6 +14,8 @@ namespace BusinessLayer.ValidationRules.FluentValidation
         {
             RuleFor(c => c.CategoryName).NotEmpty().WithMessage("Kategori Adı Boş Geçilemez.");
             RuleFor(c => c.CategoryName).MinimumLength(3).WithMessage("Kategori Adı 3 Karakterden Kısa Olamaz.");
+            RuleFor(c => c.CategoryExplanation).MinimumLength(5).WithMessage("Kategori Açıklaması 3 Karakterden Kısa Olamaz.");
+            RuleFor(c => c.CategoryExplanation).NotEmpty().WithMessage("Kategori Açıklaması Boş Geçilemez.");
         }
     }
 }

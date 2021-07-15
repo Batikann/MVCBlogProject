@@ -35,7 +35,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form method="post">
+                        <form method="post" enctype="multipart/form-data">
                             <div class="form-group">
                                 @Html.HiddenFor(x=>x.BlogID)
                                 <label for="inputName">Blog Başlığı</label>
@@ -44,7 +44,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="inputDescription">Blog Resmi</label>
-                                @Html.TextBoxFor(x => x.BlogImage, new { @class = "form-control" })
+                                <input type="file" name="BlogImage" class="form-control" />
                             </div>
                             <div class="form-group">
                                 <label for="inputDescription">Kategori</label>
@@ -60,7 +60,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="inputClientCompany">Blog İçerik</label>
-                                @Html.TextAreaFor(x => x.BlogContent, new { @class = "ckeditor" });
+                                @Html.TextAreaFor(x => x.BlogContent, new { @class = "ckeditor" })
                             </div>
                             <button class="btn btn-success" type="submit">Blog Ekle</button>
                         </form>

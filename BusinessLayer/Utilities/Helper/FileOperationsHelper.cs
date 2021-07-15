@@ -38,5 +38,10 @@ namespace BusinessLayer.Utilities.Helper
             return newFileName;
         }
 
+        public static void Delete(string path)
+        {
+            File.Delete(path);
+        }
+
     }
 }
