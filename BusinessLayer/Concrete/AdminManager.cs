@@ -20,5 +20,15 @@ namespace BusinessLayer.Concrete
         {
             _adminDal.Add(admin);
         }
+
+        public Admin GetAdminByEmail(string email)
+        {
+            return _adminDal.Get(x => x.AdminMail == email);
+        }
+
+        public void Update(Admin admin)
+        {
+            _adminDal.Update(admin);
+        }
     }
 }

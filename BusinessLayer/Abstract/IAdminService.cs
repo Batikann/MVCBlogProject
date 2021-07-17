@@ -10,5 +10,7 @@ namespace BusinessLayer.Abstract
     public interface IAdminService
     {
         void Add(Admin admin);
+        void Update(Admin admin);
+        Admin GetAdminByEmail(string email);
     }
 }

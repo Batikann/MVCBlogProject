@@ -1,0 +1,17 @@
+﻿
+@{
+    Layout = null;
+}
+<h2>Hesabı Doğrula</h2>
+@if (ViewBag.Status != null && Convert.ToBoolean(ViewBag.Status))
+{
+    <div class="alert alert-success">
+        <strong>Başarılı!</strong>Hesabınız Başarılı Bir Şekilde Aktive Edilmiştir.Buraya Tıklayarak Giriş Yapabilirsiniz <a href="/RegisterAndLogin/Login/">Giriş Yap</a>
+    </div>
+}
+else
+{
+    <div class="alert alert-danger">
+        <strong>Hata!</strong>@ViewBag.Message
+    </div>
+}

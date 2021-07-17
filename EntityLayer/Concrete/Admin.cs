@@ -22,6 +22,7 @@ namespace EntityLayer.Concrete
         public DateTime DateOfBirth { get; set; }
         public bool IsEmailVerified { get; set; }
         public Guid ActivationCode { get; set; }
+        public string ResetPasswordCode { get; set; }
 
         public ICollection<Blog> Blogs { get; set; }
     }

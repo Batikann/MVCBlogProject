@@ -18,6 +18,7 @@ namespace WebUI.Controllers.AdminPanel
         BlogManager blogManager = new BlogManager(new EfBlogDal());
         BlogDBContext context = new BlogDBContext();
         BlogValidator blogValidator = new BlogValidator();
+        [Authorize]
         public ActionResult AdminBlogList()
         {
             var blogList = blogManager.GetList();
@@ -103,6 +104,12 @@ namespace WebUI.Controllers.AdminPanel
             }
 
             return View(blog);
+        }
+
+
+        public ActionResult AdminMyBlog()
+        {
+            return View();
         }
 
     }

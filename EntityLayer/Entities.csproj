@@ -60,6 +60,7 @@
     <Compile Include="Concrete\Comment.cs" />
     <Compile Include="Concrete\Contact.cs" />
     <Compile Include="Concrete\SubscribeMail.cs" />
+    <Compile Include="DTOs\AdminLogin.cs" />
     <Compile Include="DTOs\AdminRegister.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

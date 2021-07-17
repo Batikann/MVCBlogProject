@@ -108,6 +108,10 @@
     <Compile Include="Migrations\202107141811071_mig_admintableaddcolumn.designer.cs">
       <DependentUpon>202107141811071_mig_admintableaddcolumn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107151854438_mig_admintablenewcolumn.cs" />
+    <Compile Include="Migrations\202107151854438_mig_admintablenewcolumn.designer.cs">
+      <DependentUpon>202107151854438_mig_admintablenewcolumn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -151,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107141811071_mig_admintableaddcolumn.resx">
       <DependentUpon>202107141811071_mig_admintableaddcolumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107151854438_mig_admintablenewcolumn.resx">
+      <DependentUpon>202107151854438_mig_admintablenewcolumn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
