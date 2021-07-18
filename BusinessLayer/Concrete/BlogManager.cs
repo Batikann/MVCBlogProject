@@ -12,6 +12,7 @@ namespace BusinessLayer.Concrete
     public class BlogManager : IBlogService
     {
         IBlogDal _blogDal;
+        IAdminDal _adminDal;
 
         public BlogManager(IBlogDal blogDal)
         {
@@ -42,6 +43,12 @@ namespace BusinessLayer.Concrete
         {
             return _blogDal.List(x => x.CategoryID == id);
         }
+
+        public List<Blog> GetByAuthorMail(int id)
+        {
+           return _blogDal.List(x => x.AdminID == id);
+        }
+
 
         public Blog GetById(int id)
         {

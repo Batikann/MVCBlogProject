@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Concrete.EntityFramework
 {
-    public class EfBlogDal:EfEntityRepositoryBase<Blog,BlogDBContext>,IBlogDal
+    public class EfBlogDal : EfEntityRepositoryBase<Blog, BlogDBContext>, IBlogDal
     {
     }
 }

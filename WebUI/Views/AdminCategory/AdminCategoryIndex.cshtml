@@ -3,7 +3,7 @@
     ViewBag.Title = "AdminCategoryIndex";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
-@{ 
+@{
     string status = "";
     string color = "";
     string status2 = "";
@@ -98,7 +98,7 @@
 
                     @foreach (var item in Model)
                     {
-                        if (item.CategoryStatus==false)
+                        if (item.CategoryStatus == false)
                         {
                             status = "Pasif";
                             color = "badge badge-danger";
@@ -106,7 +106,7 @@
                             color2 = "btn btn-danger btn-sm";
                             icon = "fas fa-eye-slash";
                         }
-                        if (item.CategoryStatus==true)
+                        if (item.CategoryStatus == true)
                         {
                             status = "Aktif";
                             color = "badge badge-success";
@@ -114,8 +114,33 @@
                             color2 = "btn btn-success btn-sm";
                             icon = "fas fa-eye";
                         }
-                        <tbody>
 
+                        <tbody>
+                            <tr>
+                                @*<div class="modal" id="Modal2">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h2 class="modal-title"> Kategori Güncelleme Paneli</h2>
+                                            </div>
+                                            <form action="/AdminCategory/UpdateCategory/@item.CategoryID" method="post">
+                                                <div class="modal-body">
+                                                    <label>Kategori ID</label>
+                                                    <input type="text" name="CategoryID" class="form-control" value="@item.CategoryID" />
+                                                    <br />
+                                                    <label>Kategori Adı</label>
+                                                    <input type="text" name="CategoryName" class="form-control" value="@item.CategoryName" />
+                                                    <br />
+                                                    <label>Kategori Açıklaması</label>
+                                                    <input type="text" name="CategoryExplanation" class="form-control" value="@item.CategoryName" />
+                                                    <br />
+                                                    <button class="btn btn-primary">Ekle</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>*@
+                            </tr>
                             <tr>
 
                                 <td>
@@ -155,7 +180,7 @@
 
                                 </td>
 
-                               
+
 
                                 <td class="project-state">
 
@@ -175,15 +200,17 @@
 
                                     </a>
 
+
                                     <a class="btn btn-info btn-sm" href="/AdminCategory/UpdateCategory/@item.CategoryID/">
 
-                                        <i class="fas fa-pencil-alt">
+                                            <i class="fas fa-pencil-alt">
 
-                                        </i>
+                                            </i>
 
-                                        Güncelle
+                                            Güncelle
 
-                                    </a>
+                                        </a>
+                                    @*<button class="btn btn-info btn-sm" data-target="#Modal2" data-toggle="modal">Güncelle</button>*@
 
                                     <a class="@color2" href="/AdminCategory/ChangeStatusCategory/@item.CategoryID">
 
@@ -204,12 +231,34 @@
 
                 </table>
                 <br />
-                <a class="btn btn-outline-success" href="/AdminCategory/AdminAddCategory/">Yeni Kategori Ekle</a>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#Modal1">
+                    Yeni Kategori Ekle
+                </button>
+                <div class="modal" id="Modal1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title">Yeni Kategori Ekleme Paneli</h2>
+                            </div>
+                            <form action="/AdminCategory/AdminAddCategory/" method="post">
+                                <div class="modal-body">
+                                    <label>Kategori Adı</label>
+                                    <input type="text" name="CategoryName" class="form-control" />
+                                    <br />
+                                    <label>Kategori Açıklaması</label>
+                                    <input type="text" name="CategoryExplanation" class="form-control" />
+                                    <br />
+                                    <button class="btn btn-primary">Ekle</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
                 <br />
 
             </div>
 
-            <!-- /.card-body -->
+
 
         </div>
 

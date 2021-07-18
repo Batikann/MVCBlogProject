@@ -214,7 +214,7 @@ namespace WebUI.Controllers.AdminPanel
             var link = Request.Url.AbsoluteUri.Replace(Request.Url.PathAndQuery, verifyUrl);
             var fromEmail = new MailAddress("emiruar1233@gmail.com");
             var toEmail = new MailAddress(emailID);
-            var fromEmailPassword = "Emir123321Q..E";
+            var fromEmailPassword = "*******";
             string subject = "";
             string body = "";
             if (emailFor == "VerifyAccount")

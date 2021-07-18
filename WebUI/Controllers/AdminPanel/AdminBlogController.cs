@@ -107,9 +107,12 @@ namespace WebUI.Controllers.AdminPanel
         }
 
 
-        public ActionResult AdminMyBlog()
+        public ActionResult AdminMyBlog(string mail)
         {
-            return View();
+            mail = (string)Session["AdminMail"];
+            int id = context.Admins.Where(x => x.AdminMail == mail).Select(y => y.AdminID).FirstOrDefault();
+            var myBlogs = blogManager.GetByAuthorMail(id);
+            return View(myBlogs);
         }
 
     }

@@ -112,6 +112,18 @@
     <Compile Include="Migrations\202107151854438_mig_admintablenewcolumn.designer.cs">
       <DependentUpon>202107151854438_mig_admintablenewcolumn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107172055088_mig_tableblog_addcolumn.cs" />
+    <Compile Include="Migrations\202107172055088_mig_tableblog_addcolumn.designer.cs">
+      <DependentUpon>202107172055088_mig_tableblog_addcolumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107180823052_mig_blogtabledeleteblograting.cs" />
+    <Compile Include="Migrations\202107180823052_mig_blogtabledeleteblograting.designer.cs">
+      <DependentUpon>202107180823052_mig_blogtabledeleteblograting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107180826147_mig_addblogtablenewcolumn.cs" />
+    <Compile Include="Migrations\202107180826147_mig_addblogtablenewcolumn.designer.cs">
+      <DependentUpon>202107180826147_mig_addblogtablenewcolumn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -158,6 +170,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107151854438_mig_admintablenewcolumn.resx">
       <DependentUpon>202107151854438_mig_admintablenewcolumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107172055088_mig_tableblog_addcolumn.resx">
+      <DependentUpon>202107172055088_mig_tableblog_addcolumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107180823052_mig_blogtabledeleteblograting.resx">
+      <DependentUpon>202107180823052_mig_blogtabledeleteblograting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107180826147_mig_addblogtablenewcolumn.resx">
+      <DependentUpon>202107180826147_mig_addblogtablenewcolumn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

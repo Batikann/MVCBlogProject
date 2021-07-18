@@ -3624,6 +3624,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\AdminProfilePhoto\" />
     <Folder Include="Images\Gallery\" />
     <Folder Include="Models\" />
   </ItemGroup>
