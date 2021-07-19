@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace WebUI.Controllers
 {
+    [AllowAnonymous]
     public class ContactController : Controller
     {
         ContactManager contactManager = new ContactManager(new EfContactDal());

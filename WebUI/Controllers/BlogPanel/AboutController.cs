@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace WebUI.Controllers
 {
+    [AllowAnonymous]
     public class AboutController : Controller
     {
         // GET: About

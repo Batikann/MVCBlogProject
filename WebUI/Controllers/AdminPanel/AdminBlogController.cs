@@ -16,6 +16,7 @@ namespace WebUI.Controllers.AdminPanel
     public class AdminBlogController : Controller
     {
         BlogManager blogManager = new BlogManager(new EfBlogDal());
+        AdminManager adminManager = new AdminManager(new EfAdminDal());
         BlogDBContext context = new BlogDBContext();
         BlogValidator blogValidator = new BlogValidator();
         [Authorize]
@@ -35,13 +36,16 @@ namespace WebUI.Controllers.AdminPanel
                                            }).ToList();
             ViewBag.values = values;
 
-            List<SelectListItem> values2 = (from x in context.Admins.ToList()
-                                            select new SelectListItem
-                                            {
-                                                Text = x.UserName,
-                                                Value = x.AdminID.ToString()
-                                            }).ToList();
-            ViewBag.values2 = values2;
+            //List<SelectListItem> values2 = (from x in context.Admins.ToList()
+            //                                select new SelectListItem
+            //                                {
+            //                                    Text = x.UserName,
+            //                                    Value = x.AdminID.ToString()
+            //                                }).ToList();
+            //ViewBag.values2 = values2;
+            string id = (string)Session["AdminMail"];
+           var adminid= adminManager.GetAdminByEmail(id);
+            ViewBag.values3= adminid.AdminID;
             return View();
         }
 

@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace WebUI.Controllers
 {
+    [AllowAnonymous]
     public class CategoryController : Controller
     {
         CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());

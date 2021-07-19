@@ -10,6 +10,7 @@ using PagedList.Mvc;
 
 namespace WebUI.Controllers
 {
+    [AllowAnonymous]
     public class BlogController : Controller
     {
         BlogManager blogManager = new BlogManager(new EfBlogDal());
@@ -53,11 +54,14 @@ namespace WebUI.Controllers
               Select(y => y.BlogDate).FirstOrDefault();
             var blogcategoryName1 = blogManager.GetList().OrderByDescending(x => x.BlogID).Where(x => x.CategoryID == sayi).
               Select(y => y.Category.CategoryName).FirstOrDefault();
+            var blogpostid1 = blogManager.GetList().OrderByDescending(x => x.BlogID).Where(x => x.CategoryID == sayi).
+              Select(y => y.BlogID).FirstOrDefault();
             ViewBag.posttitle1 = posttitle1;
             ViewBag.postimage1 = postimage1;
             ViewBag.blogdate1 = blogdate1;
             ViewBag.blogcategoryName1 = blogcategoryName1;
-            ViewBag.sayi = sayi;
+            ViewBag.blogpostid1= blogpostid1;
+            //ViewBag.sayi = sayi;
 
             var posttitle2 = blogManager.GetList().OrderByDescending(x => x.BlogID).Where(x => x.CategoryID == sayi2).
                 Select(y => y.BlogTitle).FirstOrDefault();
@@ -67,11 +71,14 @@ namespace WebUI.Controllers
               Select(y => y.BlogDate).FirstOrDefault();
             var blogcategoryName2 = blogManager.GetList().OrderByDescending(x => x.BlogID).Where(x => x.CategoryID == sayi2).
               Select(y => y.Category.CategoryName).FirstOrDefault();
+            var blogpostid2 = blogManager.GetList().OrderByDescending(x => x.BlogID).Where(x => x.CategoryID == sayi2).
+              Select(y => y.BlogID).FirstOrDefault();
             ViewBag.posttitle2 = posttitle2;
             ViewBag.postimage2 = postimage2;
             ViewBag.blogdate2 = blogdate2;
             ViewBag.blogcategoryName2 = blogcategoryName2;
-            ViewBag.sayi2 = sayi2;
+            ViewBag.blogpostid2 = blogpostid2;
+            //ViewBag.sayi2 = sayi2;
 
             var posttitle3 = blogManager.GetList().OrderByDescending(x => x.BlogID).Where(x => x.CategoryID == sayi3).
                Select(y => y.BlogTitle).FirstOrDefault();
@@ -81,11 +88,13 @@ namespace WebUI.Controllers
               Select(y => y.BlogDate).FirstOrDefault();
             var blogcategoryName3 = blogManager.GetList().OrderByDescending(x => x.BlogID).Where(x => x.CategoryID == sayi3).
               Select(y => y.Category.CategoryName).FirstOrDefault();
+            var blogpostid3 = blogManager.GetList().OrderByDescending(x => x.BlogID).Where(x => x.CategoryID == sayi3).
+              Select(y => y.BlogID).FirstOrDefault();
             ViewBag.posttitle3 = posttitle3;
             ViewBag.postimage3 = postimage3;
             ViewBag.blogdate3 = blogdate3;
-            ViewBag.blogcategoryName3 = blogcategoryName3;
-            ViewBag.sayi3 = sayi3;
+            ViewBag.blogpostid3 = blogpostid3;
+            //ViewBag.sayi3 = sayi3;
 
 
             var posttitle4 = blogManager.GetList().OrderByDescending(x => x.BlogID).Where(x => x.CategoryID == sayi4).
@@ -96,11 +105,14 @@ namespace WebUI.Controllers
               Select(y => y.BlogDate).FirstOrDefault();
             var blogcategoryName4 = blogManager.GetList().OrderByDescending(x => x.BlogID).Where(x => x.CategoryID == sayi4).
               Select(y => y.Category.CategoryName).FirstOrDefault();
+            var blogpostid4 = blogManager.GetList().OrderByDescending(x => x.BlogID).Where(x => x.CategoryID == sayi4).
+              Select(y => y.BlogID).FirstOrDefault();
             ViewBag.posttitle4 = posttitle4;
             ViewBag.postimage4 = postimage4;
             ViewBag.blogdate4 = blogdate4;
             ViewBag.blogcategoryName4 = blogcategoryName4;
-            ViewBag.sayi4 = sayi4;
+            ViewBag.blogpostid4 = blogpostid4;
+            //ViewBag.sayi4 = sayi4;
             return PartialView();
         }
         public PartialViewResult OtherFeaturedPost()

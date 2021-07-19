@@ -35,6 +35,7 @@
                     </div>
                     <div class="card-body">
                         <form method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="AdminID" value="@ViewBag.values3" />
                             <div class="form-group">
                                 <label for="inputName">Blog Başlığı</label>
                                 @Html.TextBoxFor(x => x.BlogTitle, new { @class = "form-control" })
@@ -47,10 +48,7 @@
                                 <label for="inputDescription">Kategori</label>
                                 @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.values, new { @class = "form-control" })
                             </div>
-                            <div class="form-group">
-                                <label for="inputDescription">Yazar</label>
-                                @Html.DropDownListFor(x => x.AdminID, (List<SelectListItem>)ViewBag.values2, new { @class = "form-control" })
-                            </div>
+                            
                             <div class="form-group">
                                 <label for="inputDescription">Ön Okuma</label>
                                 @Html.TextAreaFor(x => x.BlogPreRead, new { @class = "form-control" })

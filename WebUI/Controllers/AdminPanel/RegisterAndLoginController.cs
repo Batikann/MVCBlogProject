@@ -16,6 +16,7 @@ using System.Web.Security;
 
 namespace WebUI.Controllers.AdminPanel
 {
+    [AllowAnonymous]
     public class RegisterAndLoginController : Controller
     {
         BlogDBContext blogDbContext = new BlogDBContext();

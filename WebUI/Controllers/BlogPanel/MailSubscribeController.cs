@@ -11,6 +11,7 @@ using System.Web.Mvc;
 
 namespace WebUI.Controllers
 {
+    [AllowAnonymous]
     public class MailSubscribeController : Controller
     {
         SubscribeMailManager mailManager = new SubscribeMailManager(new EfSubscribeMailDal());

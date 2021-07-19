@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace WebUI.Controllers
 {
+    [AllowAnonymous]
     public class AuthorController : Controller
     {
         BlogManager blogManager = new BlogManager(new EfBlogDal());

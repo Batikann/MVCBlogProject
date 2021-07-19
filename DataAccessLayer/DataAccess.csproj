@@ -124,6 +124,14 @@
     <Compile Include="Migrations\202107180826147_mig_addblogtablenewcolumn.designer.cs">
       <DependentUpon>202107180826147_mig_addblogtablenewcolumn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107190957200_mig_admintablenewcolumn1.cs" />
+    <Compile Include="Migrations\202107190957200_mig_admintablenewcolumn1.designer.cs">
+      <DependentUpon>202107190957200_mig_admintablenewcolumn1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107191245396_mig_commenttableaddnewcolumn.cs" />
+    <Compile Include="Migrations\202107191245396_mig_commenttableaddnewcolumn.designer.cs">
+      <DependentUpon>202107191245396_mig_commenttableaddnewcolumn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -179,6 +187,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107180826147_mig_addblogtablenewcolumn.resx">
       <DependentUpon>202107180826147_mig_addblogtablenewcolumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107190957200_mig_admintablenewcolumn1.resx">
+      <DependentUpon>202107190957200_mig_admintablenewcolumn1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107191245396_mig_commenttableaddnewcolumn.resx">
+      <DependentUpon>202107191245396_mig_commenttableaddnewcolumn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

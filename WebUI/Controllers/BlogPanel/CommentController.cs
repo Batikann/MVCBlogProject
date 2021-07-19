@@ -11,6 +11,7 @@ using System.Web.Mvc;
 
 namespace WebUI.Controllers
 {
+    [AllowAnonymous]
     public class CommentController : Controller
     {
         CommentManager commentManager = new CommentManager(new EfCommentDal());
