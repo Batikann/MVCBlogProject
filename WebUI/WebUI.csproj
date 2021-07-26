@@ -3621,6 +3621,8 @@
     <Content Include="Views\AdminProfile\AdminAuthorProfile.cshtml" />
     <Content Include="Views\AdminProfile\Partial1.cshtml" />
     <Content Include="Views\AdminBlog\AdminMyBlog.cshtml" />
+    <Content Include="Views\AdminProfile\ProfilePartial.cshtml" />
+    <Content Include="Views\AdminProfile\TimelinePartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

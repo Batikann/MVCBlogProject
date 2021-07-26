@@ -12,7 +12,8 @@ namespace BusinessLayer.Abstract
         List<Blog> GetList();
         void Add(Blog entity);
         Blog GetById(int id);
-        void DeleteBlog(int id);
+        void DeleteBlog(int id);    
+        void DeleteAdminBlog(Blog blog);
         void Update(Blog entity);
         List<Blog> BlogByID(int id);
         List<Blog> GetBlogByAuthor(int id);

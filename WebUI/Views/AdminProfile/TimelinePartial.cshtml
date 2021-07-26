@@ -1,0 +1,32 @@
+﻿@model List<EntityLayer.Concrete.Blog>
+
+
+<div class="timeline timeline-inverse">
+
+    @foreach (var item in Model)
+    {
+        <div class="time-label">
+            <span class="bg-danger">
+                @(((DateTime)item.BlogDate).ToString("dd-MMM-yyyy"))
+            </span>
+        </div>
+
+                        <div>
+                            <i class="fas fa-pager bg-primary"></i>
+
+                            <div class="timeline-item">
+                                <span class="time"><i class="far fa-clock"></i> @item.BlogDate.ToShortTimeString()</span>
+
+                                <h4 class="timeline-header">@item.BlogTitle</h4>
+
+                                <div class="timeline-body">
+                                   @item.BlogPreRead
+                                </div>
+                                <div class="timeline-footer">
+                                    <a href="/Blog/BlogDetails/@item.BlogID" class="btn btn-primary btn-sm" target="_blank">Site de Görüntüle</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+</div>

@@ -8,6 +8,9 @@
     string text = "";
     string progressbar = "";
     int puan;
+    string text2 = "";
+    string icon = "";
+    string color2 = "";
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -61,15 +64,34 @@
                             if (puan < 80 && puan >= 60)
                             {
                                 color = "badge badge-warning";
-                                text = "Orta";
+                                text = "İyi";
                                 progressbar = "progress-bar bg-warning";
                             }
 
                             if (puan >= 10 && puan < 60)
                             {
+                                color = "badge badge-secondary";
+                                text = "Orta";
+                                progressbar = "progress-bar bg-fuchsia";
+                            }
+                            if (puan >=0 && puan <50)
+                            {
                                 color = "badge badge-danger";
                                 text = "Kötü";
                                 progressbar = "progress-bar bg-danger";
+                            }
+                            if (item.BlogStatus==false)
+                            {
+                                text2 = "Aktif Yap";
+                                icon = "fas fa-eye-slash";
+                                color2 = "btn btn-danger btn-sm";
+                            }
+                            if (item.BlogStatus==true)
+                            {
+                                text2 = "Pasif Yap";
+                                icon = "fas fa-eye";
+                                color2 = "btn btn-success btn-sm";
+
                             }
                             <tr>
                                 <td>@item.BlogID</td>
@@ -95,20 +117,20 @@
                                     <span class="@color">@text</span>
                                 </td>
                                 <td class="project-actions text-right">
-                                    <a class="btn btn-primary btn-sm" href="#">
+                                    <a class="btn btn-primary btn-sm" href="/Blog/BlogDetails/@item.BlogID">
                                         <i class="fas fa-folder">
                                         </i>
                                         Sitede Gör
                                     </a>
-                                    <a class="btn btn-info btn-sm" href="#">
+                                    <a class="btn btn-info btn-sm" href="/AdminBlog/AdminUpdateBlog/@item.BlogID">
                                         <i class="fas fa-pencil-alt">
                                         </i>
                                         Güncelle
                                     </a>
-                                    <a class="btn btn-danger btn-sm" href="#">
-                                        <i class="fas fa-trash">
+                                    <a class="@color2" href="/AdminBlog/DeleteBlog/@item.BlogID">
+                                        <i class="@icon">
                                         </i>
-                                        Sil
+                                        @text2
                                     </a>
                                 </td>
                             </tr>

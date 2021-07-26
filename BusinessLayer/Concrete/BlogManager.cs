@@ -29,6 +29,22 @@ namespace BusinessLayer.Concrete
             return _blogDal.List(x => x.BlogID == id);
         }
 
+        public void DeleteAdminBlog(Blog blog)
+        {
+            var blogg = _blogDal.Get(x => x.BlogID == blog.BlogID);
+            if (blog.BlogStatus == false)
+            {
+                blog.BlogStatus = true;
+                _blogDal.Update(blog);
+            }
+            else
+            {
+                blog.BlogStatus = false;
+                _blogDal.Update(blog);
+            }
+
+        }
+
         public void DeleteBlog(int id)
         {
             _blogDal.Get(x => x.BlogID == id);
@@ -46,7 +62,7 @@ namespace BusinessLayer.Concrete
 
         public List<Blog> GetByAuthorMail(int id)
         {
-           return _blogDal.List(x => x.AdminID == id);
+            return _blogDal.List(x => x.AdminID == id);
         }
 
 

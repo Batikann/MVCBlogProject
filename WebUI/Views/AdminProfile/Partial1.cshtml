@@ -2,7 +2,7 @@
 
 <div class="tab-pane" id="settings">
 
-    @using (Html.BeginForm("UpdateAdminProfile", "AdminProfile", FormMethod.Post))
+    @using (Html.BeginForm("UpdateAdminProfile", "AdminProfile", FormMethod.Post,new { enctype = "multipart/form-data" }))
     {
 
         @Html.HiddenFor(x => x.AdminID)

@@ -15,7 +15,8 @@ namespace WebUI.Controllers.AdminPanel
     public class AdminProfileController : Controller
     {
         AdminManager adminManager = new AdminManager(new EfAdminDal());
-        public  ActionResult AdminAuthorProfile()
+        BlogDBContext context = new BlogDBContext();
+        public ActionResult AdminAuthorProfile()
         {
             return View();
         }
@@ -26,28 +27,40 @@ namespace WebUI.Controllers.AdminPanel
             var profilValues = adminManager.GetAdminByEmail(id);
             return PartialView(profilValues);
         }
+        public PartialViewResult ProfilePartial(string id)
+        {
+            id = (string)Session["AdminMail"];
+            var profilValues = adminManager.GetAdminByEmail(id);
+            ViewBag.BlogCount = context.Blogs.Where(x => x.AdminID == profilValues.AdminID).Count().ToString();
+            return PartialView(profilValues);
+        }
 
-        public  ActionResult UpdateAdminProfile(Admin admin)
+        public PartialViewResult TimelinePartial(string id)
+        {
+            id = (string)Session["AdminMail"];
+            var profilValues = adminManager.GetAdminByEmail(id);
+            var adminBlogs = context.Blogs.Where(x => x.AdminID == profilValues.AdminID).ToList();
+            return PartialView(adminBlogs);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateAdminProfile(Admin admin)
         {
             string mail = (string)Session["AdminMail"];
             var profilValues = adminManager.GetAdminByEmail(mail);
             admin.IsEmailVerified = true;
-            if (admin.AdminImage==null )
-            {
-                admin.AdminImage = profilValues.AdminImage;
-            }
             if (admin.DateOfBirth == null)
             {
                 admin.DateOfBirth = profilValues.DateOfBirth;
             }
-            if (admin.Password==null)
+            if (admin.Password == null)
             {
                 admin.Password = profilValues.Password;
             }
             adminManager.Update(admin);
             return RedirectToAction("AdminAuthorProfile");
-  
-            
+
+
         }
     }
 }

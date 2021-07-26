@@ -23,6 +23,7 @@ namespace EntityLayer.Concrete
 
         public int AdminID { get; set; }
         public virtual Admin Admin { get; set; }
+        public bool BlogStatus { get; set; }
 
         public ICollection<Comment> Comments { get; set; }
     }

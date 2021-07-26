@@ -119,5 +119,12 @@ namespace WebUI.Controllers.AdminPanel
             return View(myBlogs);
         }
 
+        public ActionResult DeleteBlog(int id)
+        {
+            var blog = blogManager.GetById(id);
+            blogManager.DeleteAdminBlog(blog);
+            return RedirectToAction("AdminMyBlog");
+        }
+
     }
 }
