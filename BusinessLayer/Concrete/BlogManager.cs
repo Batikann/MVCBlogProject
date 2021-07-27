@@ -60,6 +60,11 @@ namespace BusinessLayer.Concrete
             return _blogDal.List(x => x.CategoryID == id);
         }
 
+        public Blog GetByAdminId(int id)
+        {
+            return _blogDal.Get(x=>x.AdminID==id);
+        }
+
         public List<Blog> GetByAuthorMail(int id)
         {
             return _blogDal.List(x => x.AdminID == id);

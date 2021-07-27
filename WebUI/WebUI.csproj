@@ -3623,6 +3623,7 @@
     <Content Include="Views\AdminBlog\AdminMyBlog.cshtml" />
     <Content Include="Views\AdminProfile\ProfilePartial.cshtml" />
     <Content Include="Views\AdminProfile\TimelinePartial.cshtml" />
+    <Content Include="Views\Category\AllCategories.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,10 +1,10 @@
-﻿@model IEnumerable<EntityLayer.Concrete.Blog>
+﻿@model List<EntityLayer.Concrete.Blog>
 
 <div class="sidebar-box">
     <h3 class="heading">Yazarın Diğer Postları</h3>
     <div class="post-entry-sidebar">
         <ul>
-            @foreach (var item in Model)
+            @foreach (var item in Model.OrderByDescending(x=>x.BlogID).Take(5))
             {
                 <li>
                     <a href="/Blog/BlogDetails/@item.BlogID">

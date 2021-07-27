@@ -17,5 +17,11 @@ namespace WebUI.Controllers
             var categoryValues = categoryManager.GetAllCategory();
             return PartialView(categoryValues);
         }
+
+        public ActionResult AllCategories()
+        {
+            var categoryValues = categoryManager.GetAllCategory();
+            return View(categoryValues);
+        }
     }
 }

@@ -30,6 +30,7 @@ namespace WebUI.Controllers
             int sayi2 = rand.Next(1, 7);
             int sayi3 = rand.Next(1, 7);
             int sayi4 = rand.Next(1, 7);
+            int sayi5 = rand.Next(1, 7);
             if (sayi == sayi2 || sayi == sayi3 || sayi == sayi4)
             {
                 sayi = rand.Next(1, 7);
@@ -45,6 +46,10 @@ namespace WebUI.Controllers
             if (sayi4 == sayi || sayi4 == sayi2 || sayi4 == sayi3)
             {
                 sayi4 = rand.Next(1, 7);
+            }
+            if (sayi5 == sayi || sayi5 == sayi2 || sayi5 == sayi3 || sayi5==sayi4)
+            {
+                sayi5 = rand.Next(1, 7);
             }
             var posttitle1 = blogManager.GetList().OrderByDescending(x => x.BlogID).Where(x => x.CategoryID == sayi).
                 Select(y => y.BlogTitle).FirstOrDefault();
@@ -113,15 +118,41 @@ namespace WebUI.Controllers
             ViewBag.blogcategoryName4 = blogcategoryName4;
             ViewBag.blogpostid4 = blogpostid4;
             //ViewBag.sayi4 = sayi4;
+
+            var posttitle5 = blogManager.GetList().OrderByDescending(x => x.BlogID).Where(x => x.CategoryID == sayi5).
+               Select(y => y.BlogTitle).FirstOrDefault();
+            var postimage5 = blogManager.GetList().OrderByDescending(x => x.BlogID).Where(x => x.CategoryID == sayi5).
+              Select(y => y.BlogImage).FirstOrDefault();
+            var blogdate5 = blogManager.GetList().OrderByDescending(x => x.BlogID).Where(x => x.CategoryID == sayi5).
+              Select(y => y.BlogDate).FirstOrDefault();
+            var blogcategoryName5 = blogManager.GetList().OrderByDescending(x => x.BlogID).Where(x => x.CategoryID == sayi5).
+              Select(y => y.Category.CategoryName).FirstOrDefault();
+            var blogpostid5 = blogManager.GetList().OrderByDescending(x => x.BlogID).Where(x => x.CategoryID == sayi5).
+              Select(y => y.BlogID).FirstOrDefault();
+            ViewBag.posttitle5 = posttitle5;
+            ViewBag.postimage5 = postimage5;
+            ViewBag.blogdate5 = blogdate5;
+            ViewBag.blogcategoryName5 = blogcategoryName5;
+            ViewBag.blogpostid5 = blogpostid5;
             return PartialView();
         }
-        public PartialViewResult OtherFeaturedPost()
+        public PartialViewResult OtherFeaturedPost(int id)
         {
+            var adminId = blogManager.GetByAdminId(id);
+            var posttitle1 = blogManager.GetList().OrderByDescending(x => x.BlogID).Where(x => x.AdminID == adminId.AdminID).
+               Select(y => y.BlogTitle).FirstOrDefault();
+            var postimage1 = blogManager.GetList().OrderByDescending(x => x.BlogID).Where(x => x.AdminID == adminId.AdminID).
+              Select(y => y.BlogImage).FirstOrDefault();
+            var blogdate1 = blogManager.GetList().OrderByDescending(x => x.BlogID).Where(x => x.AdminID == adminId.AdminID).
+              Select(y => y.BlogDate).FirstOrDefault();
+            var blogcategoryName1 = blogManager.GetList().OrderByDescending(x => x.BlogID).Where(x => x.AdminID == adminId.AdminID).
+              Select(y => y.Category.CategoryName).FirstOrDefault();
+            var blogpostid1 = blogManager.GetList().OrderByDescending(x => x.BlogID).Where(x => x.AdminID == adminId.AdminID).
+              Select(y => y.BlogID).FirstOrDefault();
             return PartialView();
         }
         public ActionResult BlogDetails()
         {
-
             return View();
         }
 

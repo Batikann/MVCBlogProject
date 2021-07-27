@@ -26,15 +26,14 @@
                 </a>
             </div>
             <div class="col-md-4">
-                <a href="single.html" class="h-entry img-5 h-100 gradient" style="background-image: url('images/img_v_1.jpg');">
+                <a href="/Blog/BlogDetails/@ViewBag.blogpostid5" class="h-entry img-5 h-100 gradient" style="background-image: url('@ViewBag.postimage5');">
 
                     <div class="text">
                         <div class="post-categories mb-3">
-                            <span class="post-category bg-danger">Travel</span>
-                            <span class="post-category bg-primary">Food</span>
+                            <span class="post-category bg-danger">@ViewBag.blogcategoryName5</span>
                         </div>
-                        <h2>The AI magically removes moving objects from videos.</h2>
-                        <span class="date">July 19, 2019</span>
+                        <h2>@ViewBag.posttitle5.</h2>
+                        <span class="date">@(((DateTime)ViewBag.blogdate5).ToString("dd-MMM-yyyy"))</span>
                     </div>
                 </a>
             </div>
